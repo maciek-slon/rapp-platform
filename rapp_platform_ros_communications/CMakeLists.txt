@@ -18,6 +18,7 @@ add_message_files(
   FILES
   StringArrayMsg.msg
   CognitiveExercisePerformanceRecordsMsg.msg
+  ArrayCognitiveExercisePerformanceRecordsMsg.msg
 )
 
 ## Generate services in the 'srv' folder
