@@ -41,12 +41,12 @@ cp currentOntologyVersion.owl ${RappPlatformFilesPath}
 
 # Download and install KnowRob
 echo -e "\e[1m\e[103m\e[31m [RAPP] Installing Knowrob \e[0m"
-sudo apt-get install -qq -y swi-prolog swi-prolog-java &> /dev/null
-sudo apt-get install -qq -y ros-indigo-json-prolog-msgs &> /dev/null
-sudo apt-get install -qq -y python-rosinstall &> /dev/null
-sudo apt-get install -qq -y libjson-glib-dev &> /dev/null
-sudo apt-get install -qq -y ros-indigo-data-vis-msgs &> /dev/null
-sudo apt-get install -qq -y ros-indigo-rosjava-build-tools &> /dev/null
+sudo apt-get install -qq -y swi-prolog swi-prolog-java
+sudo apt-get install -qq -y ros-indigo-json-prolog-msgs
+sudo apt-get install -qq -y python-rosinstall
+sudo apt-get install -qq -y libjson-glib-dev
+sudo apt-get install -qq -y ros-indigo-data-vis-msgs
+sudo apt-get install -qq -y ros-indigo-rosjava-build-tools
 
 append="export SWI_HOME_DIR=/usr/lib/swi-prolog"
 grep -q "${append}" ~/.bashrc || echo -e          \
@@ -64,7 +64,7 @@ mkdir src && cd src
 
 # Initialize knowrob catkin workspace
 echo -e "\e[1m\e[103m\e[31m [RAPP] Initializing Knowrob Catkin Workspace\e[0m"
-catkin_init_workspace &> /dev/null
+catkin_init_workspace
 
 # Fetch knowrob sources
 
@@ -73,16 +73,16 @@ if [ "${TRAVIS_BRANCH}" != "master" ]; then
   KNOWROB_BRANCH="devel"
 fi
 echo -e "\e[1m\e[103m\e[31m [RAPP] Cloning Knowrob, branch: $KNOWROB_BRANCH\e[0m"
-git clone --branch=$KNOWROB_BRANCH https://github.com/rapp-project/knowrob.git &> /dev/null
+git clone --branch=$KNOWROB_BRANCH https://github.com/rapp-project/knowrob.git
 cd ../
 
 # Update rosdep with rosjava dependencies and install them.
-rosdep update &> /dev/null
-rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y &> /dev/null
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 
 # Build knowrob
 echo -e "\e[1m\e[103m\e[31m [RAPP] Building Knowrob \e[0m"
-catkin_make &> /dev/null
+catkin_make
 
 append="source ${KnowrobPath}/devel/setup.bash --extend"
 grep -q "${append}" ~/.bashrc || echo -e          \
