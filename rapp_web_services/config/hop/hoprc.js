@@ -15,7 +15,7 @@ user.add({
   password: "+0c490944da919b09163ce2b72ab2f93a",
   groups: [],
   services: "*", // Allow for all services
-  directories: ["/tmp"] // Restrict directories to /tmp.
+  directories: "*" // Restrict directories to /tmp.
 });
 
 
