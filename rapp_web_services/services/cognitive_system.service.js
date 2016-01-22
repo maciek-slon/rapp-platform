@@ -75,8 +75,8 @@ service plot_data_form( {data: {}, x_axis:'', y_axis:'',
         var attrs = {
           mode: 'lines+markers',
          name: prop,
-         marker: { size: 2 },
-         line: { width: 1 },
+         marker: { size: 6 },
+         line: { width: 2 },
         };
 
         var trace = createTraceData(data[prop], x_axis, y_axis, attrs);
