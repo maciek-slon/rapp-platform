@@ -54,6 +54,7 @@ add_service_files(
   /OntologyWrapper/cognitiveTestsOfTypeSrv.srv
   /OntologyWrapper/recordUserPerformanceCognitiveTestsSrv.srv
   /OntologyWrapper/clearUserPerformanceCognitveTestsSrv.srv
+  /OntologyWrapper/registerImageObjectToOntologySrv.srv
 
   /FaceDetection/FaceDetectionRosSrv.srv
 
