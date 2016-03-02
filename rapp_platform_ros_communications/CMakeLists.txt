@@ -20,6 +20,7 @@ add_message_files(
   CognitiveExercisePerformanceRecordsMsg.msg
   MailMsg.msg
   NewsStoryMsg.msg
+  ServiceReportMsg.msg
   WeatherForecastMsg.msg
 )
 
