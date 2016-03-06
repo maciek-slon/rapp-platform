@@ -79,6 +79,9 @@ add_service_files(
   /AudioProcessing/AudioProcessingTransformAudioSrv.srv
 
   /TextToSpeechEspeak/TextToSpeechSrv.srv
+  
+  /HazardDetection/LightCheckRosSrv.srv
+  /HazardDetection/DoorCheckRosSrv.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
